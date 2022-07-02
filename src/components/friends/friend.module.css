@@ -1,0 +1,15 @@
+.friendList {
+  display: block;
+  background-color: #fff;
+  padding: 10px;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 20px;
+}
