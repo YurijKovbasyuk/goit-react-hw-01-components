@@ -2,17 +2,8 @@ import css from 'components/pofile/profile.module.css';
 import PropTypes from 'prop-types';
 import ProfileList from 'components/pofile/ProfileList';
 
-const Profile = ({
-  user,
-  //   avatar,
-  //   username,
-  //   tag,
-  //   location,
-  //   followers,
-  //   views,
-  //   likes,
-}) => {
-  const { avatar, username, tag, location } = user;
+const Profile = ({ avatar, username, tag, location, stats }) => {
+  // const { avatar, username, tag, location } = user;
 
   return (
     <div className={css.profile}>
@@ -27,7 +18,7 @@ const Profile = ({
         <p className={css.tag}>{tag}</p>
         <p className={css.location}>{location}</p>
       </div>
-      <ProfileList stats={user.stats} />
+      <ProfileList stats={stats} />
       {/* <ul className={css.stats}>
         <li>
           <span className={css.label}>Followers: </span>
@@ -47,17 +38,17 @@ const Profile = ({
 };
 
 Profile.propTypes = {
-  user: PropTypes.exact({
-    avatar: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
-    tag: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    stats: PropTypes.shape({
-      followers: PropTypes.number.isRequired,
-      views: PropTypes.number.isRequired,
-      likes: PropTypes.number.isRequired,
-    }),
+  // user: PropTypes.exact({
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
   }),
+  // }),
 };
 
 export default Profile;

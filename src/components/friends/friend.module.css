@@ -9,7 +9,13 @@
   align-items: center;
   margin-bottom: 10px;
 }
-
+.status svg {
+  height: 20px;
+  width: 20px;
+}
+.avatar {
+  margin-right: 10px;
+}
 .name {
   font-size: 20px;
 }

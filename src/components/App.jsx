@@ -1,9 +1,11 @@
 import Profile from 'components/pofile/Profile';
-import userInfo from 'path/user.json';
+import user from 'path/user.json';
 import Statistics from 'components/statistics/Statistics';
 import data from 'path/data.json';
 import FriendList from 'components/friends/FriendList';
-import friendsInfo from 'path/friends.json';
+import friends from 'path/friends.json';
+import TransactionHistory from 'components/transaction/TransactionHistory';
+import transactions from 'path/transactions.json';
 
 const App = () => {
   return (
@@ -17,11 +19,21 @@ const App = () => {
         backgroundColor: '#65e8ff',
       }}
     >
-      React homework 1
-      <Profile user={userInfo} />
+      Task 1
+      <Profile
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+      />
+      Task 2
       <Statistics title="Upload stats" stats={data} />
       <Statistics stats={data} />
-      <FriendList friends={friendsInfo} />
+      Task 3
+      <FriendList friends={friends} />
+      Task 4
+      <TransactionHistory items={transactions} />
     </div>
   );
 };
