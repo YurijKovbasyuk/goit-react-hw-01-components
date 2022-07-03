@@ -1,6 +1,6 @@
 import css from 'components/statistics/statistics.module.css';
 import StatisticLabel from 'components/statistics/StatisticLabel';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Statistics = ({ title, stats }) => {
   return (
@@ -13,6 +13,15 @@ const Statistics = ({ title, stats }) => {
   );
 };
 
-// Statistics.PropTypes = {};
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
+};
 
 export default Statistics;
