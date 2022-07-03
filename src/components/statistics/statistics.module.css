@@ -1,5 +1,6 @@
 .statList {
   display: flex;
+  justify-content: center;
   padding-left: 0px;
   font-size: 30px;
 }
