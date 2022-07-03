@@ -1,24 +1,17 @@
 import css from 'components/statistics/statistics.module.css';
+import getRandomHexColor from 'helpers/ranomColor';
 
-const StatisticLabel = ({ stats }) => {
-  // console.log('1', stats[0]);
-
-  return stats.map(stat => (
+const StatisticLabel = ({ id, label, percentage }) => {
+  return (
     <li
       className={css.item}
-      key={stat.id}
+      key={id}
       style={{ backgroundColor: getRandomHexColor() }}
     >
-      <span className={css.label}>{stat.label}</span>
-      <span className={css.percentage}>{stat.percentage}%</span>
+      <span className={css.label}>{label}</span>
+      <span className={css.percentage}>{percentage}%</span>
     </li>
-  ));
+  );
 };
-
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
 
 export default StatisticLabel;

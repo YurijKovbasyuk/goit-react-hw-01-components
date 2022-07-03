@@ -1,16 +1,14 @@
-// import FriendListItem from 'components/friends/FriendListItem';
 import css from 'components/friends/friend.module.css';
 import PropTypes from 'prop-types';
 import { BsEmojiSmile, BsEmojiFrown } from 'react-icons/bs';
 
 const FriendList = ({ friends }) => {
-  // console.log(friends);
   return (
     <ul className={css.friendList}>
-      {friends.map(friend => (
-        <li className={css.item} key={friend.id}>
+      {friends.map(({ id, isOnline, avatar, name }) => (
+        <li className={css.item} key={id}>
           <span className={css.status}>
-            {friend.isOnline ? (
+            {isOnline ? (
               <BsEmojiSmile
                 style={{
                   backgroundColor: '#54f046',
@@ -28,16 +26,10 @@ const FriendList = ({ friends }) => {
               />
             )}
           </span>
-          <img
-            className={css.avatar}
-            src={friend.avatar}
-            alt={friend.name}
-            width="48"
-          />
-          <p className={css.name}>{friend.name}</p>
+          <img className={css.avatar} src={avatar} alt={name} width="48" />
+          <p className={css.name}>{name}</p>
         </li>
       ))}
-      {/* <FriendListItem friends={props} /> */}
     </ul>
   );
 };
